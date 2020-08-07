@@ -1,3 +1,4 @@
 # iDine
 SwiftUI Application for restaurant for showing menu and calculate the payment amount once user place the order
-![Simulator Screen Shot - iPhone 11 Pro Max - 2020-08-07 at 20 39 26](https://user-images.githubusercontent.com/45746492/89651408-17b86d00-d8ee-11ea-9025-f1d2c161a33c.png)
+
+<img width="986" alt="Screen Shot 2563-08-07 at 20 46 48" src="https://user-images.githubusercontent.com/45746492/89652142-3cf9ab00-d8ef-11ea-92b2-433863e09920.png">
