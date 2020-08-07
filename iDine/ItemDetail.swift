@@ -9,13 +9,43 @@
 import SwiftUI
 
 struct ItemDetail: View {
+    @EnvironmentObject var order: Order
+    var item: MenuItem
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        VStack {
+            ZStack(alignment: .bottomTrailing){
+            Image(item.mainImage)
+                .resizable()
+                .scaledToFill()
+                .frame(width: 350, height: 200)
+                .cornerRadius(20)
+                .shadow(radius: 20)
+                
+                
+                Text("Photo:\(item.photoCredit)")
+                    .padding(4)
+                    .background(Color.black)
+                    .font(.caption)
+                    .foregroundColor(.white)
+                    .offset(x:-10, y:-15)
+                
+            }
+            Text(item.description)
+                .padding()
+            Button("Order This"){
+                self.order.add(item: self.item)
+            }.font(.headline)
+            Spacer()
+        }.navigationBarTitle(Text(item.name), displayMode: .inline)
     }
 }
 
 struct ItemDetail_Previews: PreviewProvider {
+    static let order = Order()
     static var previews: some View {
-        ItemDetail()
+        NavigationView {
+            ItemDetail(item: MenuItem.example).environmentObject(order)
+    }
     }
 }

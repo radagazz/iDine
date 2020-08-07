@@ -8,14 +8,27 @@
 
 import SwiftUI
 
-struct Appview: View {
+struct AppView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView{
+            ContentView()
+                .tabItem{
+                    Image(systemName: "list.dash")
+                    Text("Menu")
+            }
+            OrderView()
+                .tabItem {
+                Image(systemName: "square.and.pencil")
+                    Text("Order")
+            }
+        }
     }
 }
 
 struct Appview_Previews: PreviewProvider {
+     static let order = Order()
     static var previews: some View {
-        Appview()
+       
+        AppView().environmentObject(order)
     }
 }
